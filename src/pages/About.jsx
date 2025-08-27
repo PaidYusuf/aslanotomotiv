@@ -6,25 +6,25 @@ const About = () => {
 
   const timeline = [
     {
-      year: 2009,
+      year: 1995,
       title: 'Kuruluş',
       description: 'Aslan Otomotiv, küçük bir atölye olarak motor yağı değişimi hizmeti ile faaliyetine başladı.',
       icon: 'fas fa-flag'
     },
     {
-      year: 2012,
+      year: 2005,
       title: 'Büyüme',
       description: 'Artan müşteri memnuniyeti ile hizmet yelpazemizi genişlettik ve filtre değişimi hizmetini ekledik.',
       icon: 'fas fa-chart-line'
     },
     {
-      year: 2015,
+      year: 2012,
       title: 'Modernizasyon',
       description: 'Modern ekipmanlar ve kaliteli marka ürünleriyle hizmet kalitemizi artırdık.',
       icon: 'fas fa-tools'
     },
     {
-      year: 2018,
+      year: 2016,
       title: 'Genişleme',
       description: 'Genel araç bakımı ve yedek parça satışı ile hizmet alanımızı genişlettik.',
       icon: 'fas fa-expand-arrows-alt'
@@ -36,9 +36,9 @@ const About = () => {
       icon: 'fas fa-laptop'
     },
     {
-      year: 2024,
+      year: 2025,
       title: 'Bugün',
-      description: '15 yıllık tecrübe ile sektörde güvenilir bir marka haline geldik.',
+      description: '30 yıllık tecrübe ile sektörde güvenilir bir marka haline geldik.',
       icon: 'fas fa-crown'
     }
   ]
@@ -78,32 +78,32 @@ const About = () => {
 
   const team = [
     {
-      name: 'Ahmet Aslan',
+      name: 'Yusuf Aslan',
       position: 'Kurucu & İşletmeci',
-      experience: '15+ Yıl',
+      experience: '30+ Yıl',
       specialization: 'Motor Yağları & Genel Bakım',
-      description: '15 yıllık tecrübesiyle sektörün deneyimli isimlerinden. Motor yağları konusunda uzman.'
+      description: '30 yıllık tecrübesiyle sektörün deneyimli isimlerinden. Motor yağları konusunda uzman.'
     },
     {
-      name: 'Mehmet Kaya',
+      name: 'Mehmet Aslan',
       position: 'Baş Teknisyen',
-      experience: '12+ Yıl',
-      specialization: 'Filtre Sistemleri & Elektronik',
-      description: 'Filtre sistemleri ve araç elektroniği konularında uzman teknisyen.'
-    },
-    {
-      name: 'Ali Demir',
-      position: 'Teknisyen',
-      experience: '8+ Yıl',
-      specialization: 'Genel Bakım & Yedek Parça',
-      description: 'Genel araç bakımı ve yedek parça montajında deneyimli teknisyen.'
+      experience: '25+ Yıl',
+      specialization: 'Filtre Sistemleri & Motor Yağları',
+      description: 'Filtre sistemleri ve motor yağları konularında uzman.'
+    // },
+    // {
+    //   name: 'Ali Demir',
+    //   position: 'Teknisyen',
+    //   experience: '8+ Yıl',
+    //   specialization: 'Genel Bakım & Yedek Parça',
+    //   description: 'Genel araç bakımı ve yedek parça montajında deneyimli teknisyen.'
     }
   ]
 
   const stats = [
-    { number: '15+', label: 'Yıl Tecrübe', icon: 'fas fa-calendar-alt' },
-    { number: '5000+', label: 'Mutlu Müşteri', icon: 'fas fa-users' },
-    { number: '50000+', label: 'Tamamlanan İşlem', icon: 'fas fa-tasks' },
+    { number: '30+', label: 'Yıl Tecrübe', icon: 'fas fa-calendar-alt' },
+    { number: '10.000+', label: 'Mutlu Müşteri', icon: 'fas fa-users' },
+    { number: '50.000+', label: 'Tamamlanan İşlem', icon: 'fas fa-tasks' },
     { number: '98%', label: 'Memnuniyet Oranı', icon: 'fas fa-thumbs-up' }
   ]
 
@@ -120,7 +120,7 @@ const About = () => {
           >
             <h1>Hakkımızda</h1>
             <p>
-              15 yıldır aynı tutku ve kalite anlayışıyla, aracınızın bakım ihtiyaçlarını 
+              30 yıldır aynı tutku ve kalite anlayışıyla, aracınızın bakım ihtiyaçlarını 
               karşılayan güvenilir partneriniz.
             </p>
           </motion.div>
@@ -144,7 +144,7 @@ const About = () => {
                 ve kaliteli hizmet anlayışımızla bugün sektörün güvenilir markalarından biri haline geldik.
               </p>
               <p>
-                15 yıl boyunca binlerce müşterimizin aracına bakmaktan gurur duyuyoruz. Her geçen gün 
+                30 yıl boyunca binlerce müşterimizin aracına bakmaktan gurur duyuyoruz. Her geçen gün 
                 kendimizi yeniliyor, sektördeki gelişmeleri takip ediyor ve ekibimizi geliştiriyoruz.
               </p>
               <p>
@@ -154,11 +154,11 @@ const About = () => {
               <div className="story-highlights">
                 <div className="highlight">
                   <i className="fas fa-star text-gold"></i>
-                  <span>Sektörde 15 yıllık tecrübe</span>
+                  <span>Sektörde 30 yıllık tecrübe</span>
                 </div>
                 <div className="highlight">
                   <i className="fas fa-award text-gold"></i>
-                  <span>5000+ mutlu müşteri</span>
+                  <span>10.000+ mutlu müşteri</span>
                 </div>
                 <div className="highlight">
                   <i className="fas fa-shield text-gold"></i>
@@ -175,7 +175,7 @@ const About = () => {
             >
               <div className="image-placeholder">
                 <i className="fas fa-history"></i>
-                <span>15 Yıllık Deneyim</span>
+                <span>30 Yıllık Deneyim</span>
               </div>
             </motion.div>
           </div>

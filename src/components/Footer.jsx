@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="footer-description">
-                Profesyonel araç bakım ve servis hizmetleri ile 15 yıldır müşterilerimizin 
+                Profesyonel araç bakım ve servis hizmetleri ile 30 yıldır müşterilerimizin 
                 güvenini kazanmış, kaliteli hizmet anlayışımızla sektörde öncü konumdayız.
               </p>
               <div className="social-links">
@@ -96,14 +96,14 @@ const Footer = () => {
                   <i className="fas fa-map-marker-alt"></i>
                   <div>
                     <strong>Adres:</strong>
-                    <p>Örnek Mahalle, Araç Bakım Sokak No:15<br />Fatih/İstanbul</p>
+                    <p>Cumhuriyet, 684. Sk. No:60, 07010<br />Muratpaşa/Antalya</p>
                   </div>
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-phone"></i>
                   <div>
                     <strong>Telefon:</strong>
-                    <a href="tel:+905551234567">+90 555 123 45 67</a>
+                    <a href="tel:+905551234567">+90 532 798 65 42</a>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -117,7 +117,7 @@ const Footer = () => {
                   <i className="fas fa-clock"></i>
                   <div>
                     <strong>Çalışma Saatleri:</strong>
-                    <p>Pazartesi - Cumartesi: 08:00 - 18:00<br />Pazar: Kapalı</p>
+                    <p>Pazartesi - Cuma: 08:00 - 18:00<br />Cumartesi: 08:00 - 16:00<br />Pazar: Kapalı</p>
                   </div>
                 </div>
               </div>

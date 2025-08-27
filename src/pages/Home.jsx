@@ -98,7 +98,7 @@ const Home = () => {
                 <span className="cursor">|</span>
               </h1>
               <p className="hero-description">
-                15 yıllık tecrübemizle aracınızın motor yağı değişimi, filtre bakımı 
+                30 yıllık tecrübemizle aracınızın motor yağı değişimi, filtre bakımı 
                 ve genel servis hizmetlerini profesyonel ekibimizle gerçekleştiriyoruz.
               </p>
               <div className="hero-buttons">
@@ -106,7 +106,7 @@ const Home = () => {
                   <i className="fas fa-tools"></i>
                   Hizmetlerimiz
                 </Link>
-                <a href="tel:+905551234567" className="btn btn-outline">
+                <a href="tel:+905327986542" className="btn btn-outline">
                   <i className="fas fa-phone"></i>
                   Hemen Ara
                 </a>
@@ -119,11 +119,11 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="stat">
-                <div className="stat-number">15+</div>
+                <div className="stat-number">30+</div>
                 <div className="stat-label">Yıl Tecrübe</div>
               </div>
               <div className="stat">
-                <div className="stat-number">5000+</div>
+                <div className="stat-number">10.000+</div>
                 <div className="stat-label">Mutlu Müşteri</div>
               </div>
               <div className="stat">
@@ -204,7 +204,7 @@ const Home = () => {
                 <div className="feature">
                   <i className="fas fa-award text-gold"></i>
                   <div>
-                    <h4>15 Yıl Tecrübe</h4>
+                    <h4>30 Yıl Tecrübe</h4>
                     <p>Sektördeki uzun tecrübemizle en kaliteli hizmeti sunuyoruz.</p>
                   </div>
                 </div>
@@ -346,7 +346,7 @@ const Home = () => {
               Hemen iletişime geçin ve randevu alın.
             </p>
             <div className="cta-buttons">
-              <a href="tel:+905551234567" className="btn btn-primary">
+              <a href="tel:+905327986542" className="btn btn-primary">
                 <i className="fas fa-phone"></i>
                 Hemen Ara: +90 555 123 45 67
               </a>

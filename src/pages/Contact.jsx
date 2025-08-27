@@ -67,24 +67,24 @@ const Contact = () => {
       icon: 'fas fa-map-marker-alt',
       title: 'Adres',
       details: [
-        'Örnek Mahalle, Araç Bakım Sokak No:15',
-        'Fatih/İstanbul, 34000'
+        'Cumhuriyet, 684. Sk. No:60',
+        'Muratpaşa/Antalya, 07010'
       ],
       action: {
         text: 'Haritada Gör',
-        link: 'https://maps.google.com'
+        link: 'https://maps.app.goo.gl/AYsRbxhSMLd3bpDQA'
       }
     },
     {
       icon: 'fas fa-phone',
       title: 'Telefon',
       details: [
-        '+90 555 123 45 67',
+        '+90 532 798 65 42',
         '+90 212 123 45 67'
       ],
       action: {
         text: 'Hemen Ara',
-        link: 'tel:+905551234567'
+        link: 'tel:+905327986542'
       }
     },
     {
@@ -103,7 +103,8 @@ const Contact = () => {
       icon: 'fas fa-clock',
       title: 'Çalışma Saatleri',
       details: [
-        'Pazartesi - Cumartesi: 08:00 - 18:00',
+        'Pazartesi - Cuma: 08:00 - 18:00',
+        'Cumartesi: 08:00 - 16:00',
         'Pazar: Kapalı'
       ],
       action: null
@@ -242,7 +243,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      placeholder="0555 123 45 67"
+                      placeholder="0532 798 65 42"
                     />
                   </div>
 
@@ -375,8 +376,8 @@ const Contact = () => {
               <div className="map-placeholder">
                 <i className="fas fa-map"></i>
                 <h3>Konum</h3>
-                <p>Örnek Mahalle, Araç Bakım Sokak No:15<br />Fatih/İstanbul</p>
-                <a href="https://maps.google.com" className="btn btn-outline" target="_blank">
+                <p>Cumhuriyet, 684. Sk. No:60<br />Muratpaşa/Antalya</p>
+                <a href="https://maps.app.goo.gl/AYsRbxhSMLd3bpDQA" className="btn btn-outline" target="_blank">
                   <i className="fas fa-external-link-alt"></i>
                   Google Maps'te Aç
                 </a>
@@ -385,14 +386,14 @@ const Contact = () => {
               <div className="quick-contact">
                 <h3>Hızlı İletişim</h3>
                 <div className="quick-contact-options">
-                  <a href="tel:+905551234567" className="quick-contact-btn">
+                  <a href="tel:+905327986542" className="quick-contact-btn">
                     <i className="fas fa-phone"></i>
                     <div>
                       <span className="label">Telefon</span>
-                      <span className="value">+90 555 123 45 67</span>
+                      <span className="value">+90 532 798 65 42</span>
                     </div>
                   </a>
-                  <a href="https://wa.me/905551234567" className="quick-contact-btn">
+                  <a href="https://wa.me/905327986542" className="quick-contact-btn">
                     <i className="fab fa-whatsapp"></i>
                     <div>
                       <span className="label">WhatsApp</span>
