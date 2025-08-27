@@ -163,9 +163,8 @@ const Contact = () => {
                 key={index}
                 className="contact-info-card card"
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
               >
                 <div className="card-header text-center">
                   <i className={`${info.icon} icon`}></i>
@@ -197,9 +196,8 @@ const Contact = () => {
             <motion.div 
               className="contact-form-wrapper"
               initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="form-header">
                 <h2>Randevu Al</h2>
@@ -369,9 +367,8 @@ const Contact = () => {
             <motion.div 
               className="map-wrapper"
               initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="map-placeholder">
                 <i className="fas fa-map"></i>
@@ -622,6 +619,20 @@ const Contact = () => {
         .map-placeholder p {
           margin: 0;
           color: var(--text-muted);
+        }
+
+        .map-placeholder .btn {
+          margin-top: 1rem;
+          min-width: 200px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 0.8rem 1.5rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-decoration: none;
+          white-space: nowrap;
         }
 
         .quick-contact {

@@ -23,6 +23,18 @@ const Header = () => {
     { path: '/iletisim', label: 'İletişim', icon: 'fas fa-phone' }
   ]
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false)
+    setTimeout(scrollToTop, 100) // Small delay to ensure navigation completes
+  }
+
   return (
     <motion.header 
       className={`header ${isScrolled ? 'header-scrolled' : ''}`}
@@ -33,7 +45,7 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           {/* Logo */}
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" onClick={scrollToTop}>
             <div className="logo-icon">
               <i className="fas fa-car"></i>
             </div>
@@ -50,6 +62,7 @@ const Header = () => {
                 key={item.path}
                 to={item.path}
                 className={`nav-link ${location.pathname === item.path ? 'nav-link-active' : ''}`}
+                onClick={scrollToTop}
               >
                 <i className={item.icon}></i>
                 <span>{item.label}</span>
@@ -83,7 +96,7 @@ const Header = () => {
               key={item.path}
               to={item.path}
               className={`nav-link-mobile ${location.pathname === item.path ? 'nav-link-active' : ''}`}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={handleNavClick}
             >
               <i className={item.icon}></i>
               <span>{item.label}</span>

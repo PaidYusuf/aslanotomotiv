@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -180,14 +180,17 @@ const Services = () => {
         <div className="container">
           <div className="filter-tabs">
             {categories.map((category) => (
-              <button
+              <motion.button
                 key={category.id}
                 className={`filter-tab ${activeCategory === category.id ? 'active' : ''}`}
                 onClick={() => setActiveCategory(category.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
               >
                 <i className={category.icon}></i>
                 <span>{category.name}</span>
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -197,15 +200,21 @@ const Services = () => {
       <section className="services-grid section">
         <div className="container">
           <div className="grid grid-2">
-            {filteredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                className="service-card-detailed card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                layout
-              >
+            <AnimatePresence mode="wait">
+              {filteredServices.map((service, index) => (
+                <motion.div
+                  key={`${activeCategory}-${service.id}`}
+                  className="service-card-detailed card"
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: -30 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    delay: index * 0.05,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  layout
+                >
                 <div className="service-image">
                   <div className="image-placeholder">
                     <i className={service.icon}></i>
@@ -260,7 +269,8 @@ const Services = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+              ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>

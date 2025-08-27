@@ -348,7 +348,7 @@ const Home = () => {
             <div className="cta-buttons">
               <a href="tel:+905327986542" className="btn btn-primary">
                 <i className="fas fa-phone"></i>
-                Hemen Ara: +90 555 123 45 67
+                Hemen Ara: +90 532 798 65 42
               </a>
               <Link to="/iletisim" className="btn btn-outline">
                 <i className="fas fa-envelope"></i>

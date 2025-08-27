@@ -134,9 +134,8 @@ const About = () => {
             <motion.div 
               className="story-content"
               initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
               <h2>Hikayemiz</h2>
               <p>
@@ -169,9 +168,8 @@ const About = () => {
             <motion.div 
               className="story-image"
               initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="image-placeholder">
                 <i className="fas fa-history"></i>
