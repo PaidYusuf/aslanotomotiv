@@ -1,16 +1,29 @@
-# Aslan Otomotiv
+# aslanotomotiv
 
-A modern web application for Aslan Otomotiv, an automobile maintenance business.
+This repository contains the source code for the Aslan Otomotiv project. It includes the following:
 
-## Features
-- Service information
-- Online reservation
-- Contact section
+- **Frontend**: Built with React and Vite.
+- **Features**: Home, Services, Reservations, and Contact sections.
 
-## Getting Started
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
+## How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/PaidYusuf/aslanotomotiv.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd aslanotomotiv
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
 ## License
-MIT
+
+This project is licensed under the MIT License. See the LICENSE file for details.
