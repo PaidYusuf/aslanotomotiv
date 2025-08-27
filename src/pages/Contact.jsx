@@ -375,7 +375,7 @@ const Contact = () => {
                 <h3>Konum</h3>
                 <p>Cumhuriyet, 684. Sk. No:60<br />Muratpaşa/Antalya</p>
                 <a href="https://maps.app.goo.gl/AYsRbxhSMLd3bpDQA" className="btn btn-outline" target="_blank">
-                  <i className="fas fa-external-link-alt"></i>
+                  <i className="fas fa-external-link-alt" style={{ fontSize: '1.1rem', marginRight: '0.5rem', verticalAlign: 'middle' }}></i>
                   Google Maps'te Aç
                 </a>
               </div>
