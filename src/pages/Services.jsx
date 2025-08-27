@@ -258,10 +258,10 @@ const Services = () => {
                   </div>
                   
                   <div className="service-actions">
-                    <a href="tel:+905327986542" className="btn btn-primary">
+                    <Link to="/iletisim#randevu-form" className="btn btn-primary">
                       <i className="fas fa-phone"></i>
                       Randevu Al
-                    </a>
+                    </Link>
                     <Link to="/iletisim" className="btn btn-outline">
                       <i className="fas fa-info-circle"></i>
                       Detaylar

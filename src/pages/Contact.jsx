@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,23 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
+
+  // Handle scrolling to hash target on component mount
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash) {
+      const element = document.querySelector(hash)
+      if (element) {
+        // Delay to ensure the page has rendered
+        setTimeout(() => {
+          element.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          })
+        }, 100)
+      }
+    }
+  }, [])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -189,7 +206,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Map Section */}
-      <section className="contact-form-section section section-dark">
+      <section id="randevu-form" className="contact-form-section section section-dark">
         <div className="container">
           <div className="grid grid-2">
             {/* Contact Form */}
