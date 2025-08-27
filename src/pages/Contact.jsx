@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,22 +45,44 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus(null)
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Validate required fields
+      if (!formData.name || !formData.email || !formData.phone || 
+          !formData.service || !formData.appointmentDate || !formData.appointmentTime) {
+        setSubmitStatus('error')
+        setIsSubmitting(false)
+        return
+      }
+
+      // Send data to backend
+      const response = await axios.post('http://localhost:5000/api/appointments', formData)
+      
+      if (response.status === 201) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          vehicleInfo: '',
+          message: '',
+          appointmentDate: '',
+          appointmentTime: ''
+        })
+      }
+    } catch (error) {
+      console.error('Error submitting appointment:', error)
+      setSubmitStatus('error')
+      
+      // Show specific error message if available
+      if (error.response?.data?.message) {
+        alert(error.response.data.message)
+      }
+    } finally {
       setIsSubmitting(false)
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        vehicleInfo: '',
-        message: '',
-        appointmentDate: '',
-        appointmentTime: ''
-      })
-    }, 2000)
+    }
   }
 
   const services = [
