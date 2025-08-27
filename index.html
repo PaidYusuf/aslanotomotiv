@@ -1,10 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Aslan Otomotiv - Profesyonel Araç Bakım ve Servis Hizmetleri</title>
+    <meta name="description" content="Aslan Otomotiv'de motor yağı değişimi, filtre değişimi, araç bakım hizmetleri ve kaliteli yedek parça satışı. Uzman ekibimizle aracınıza en iyi hizmeti sunuyoruz." />
+    <meta name="keywords" content="motor yağı değişimi, araç bakım, filtre değişimi, hava filtresi, cam silecek, yedek parça, otomotiv servisi, Aslan Otomotiv" />
+    <meta name="author" content="Aslan Otomotiv" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Aslan Otomotiv - Profesyonel Araç Bakım ve Servis Hizmetleri" />
+    <meta property="og:description" content="Motor yağı değişimi, filtre değişimi ve araç bakım hizmetleri. Uzman ekibimizle aracınıza en iyi hizmeti sunuyoruz." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aslanotomotiv.com" />
+    <meta property="og:image" content="/og-image.jpg" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aslan Otomotiv - Profesyonel Araç Bakım Hizmetleri" />
+    <meta name="twitter:description" content="Motor yağı değişimi, filtre değişimi ve araç bakım hizmetleri." />
+    <meta name="twitter:image" content="/og-image.jpg" />
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutomotiveBusiness",
+      "name": "Aslan Otomotiv",
+      "description": "Profesyonel araç bakım ve servis hizmetleri",
+      "url": "https://aslanotomotiv.com",
+      "telephone": "+90-XXX-XXX-XXXX",
+      "priceRange": "$$",
+      "openingHours": "Mo-Sa 08:00-18:00",
+      "serviceArea": {
+        "@type": "City",
+        "name": "İstanbul"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Araç Bakım Hizmetleri",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Motor Yağı Değişimi"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Filtre Değişimi"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Araç Bakım Hizmetleri"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <div id="root"></div>
