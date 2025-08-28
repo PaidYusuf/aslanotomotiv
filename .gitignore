@@ -29,6 +29,7 @@ build/
 *.sln
 *.sw?
 
-# Ignore database validation and setup scripts
+# Ignore database validation, setup, and seed scripts
 server/CLOUD_DATABASE_VALIDATION.md
 server/setupCloudDB.js
+server/seedAdmin.js
