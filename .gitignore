@@ -28,3 +28,7 @@ build/
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore database validation and setup scripts
+server/CLOUD_DATABASE_VALIDATION.md
+server/setupCloudDB.js

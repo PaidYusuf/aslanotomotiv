@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+  const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const Admin = require('./models/Admin')
 
@@ -7,9 +7,24 @@ dotenv.config()
 
 const seedAdmin = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/aslanotomotiv')
-    console.log('Connected to MongoDB')
+    // Only use cloud database - no local fallback
+    if (!process.env.MONGODB_URI) {
+      console.error('❌ MONGODB_URI environment variable is not set!')
+      console.log('Please configure your .env file with your MongoDB Atlas connection string.')
+      process.exit(1)
+    }
+
+    if (process.env.MONGODB_URI.includes('localhost') || process.env.MONGODB_URI.includes('127.0.0.1')) {
+      console.error('❌ Local MongoDB connection detected!')
+      console.log('Seed script is configured to only use cloud database.')
+      console.log('Please update your .env file with a MongoDB Atlas connection string.')
+      process.exit(1)
+    }
+
+    // Connect to MongoDB Atlas only
+    await mongoose.connect(process.env.MONGODB_URI)
+    console.log('✅ Connected to MongoDB Atlas for seeding')
+    console.log(`📊 Database: ${mongoose.connection.db.databaseName}`)
 
     // Check if admin already exists
     const existingAdmin = await Admin.findOne({ username: 'admin' })

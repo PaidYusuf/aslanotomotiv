@@ -16,12 +16,43 @@ app.use(cors())
 app.use(express.json())
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/aslanotomotiv', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected successfully'))
-.catch(err => console.log('MongoDB connection error:', err))
+const connectToDatabase = async () => {
+  try {
+    // Only use cloud database - no local fallback
+    if (!process.env.MONGODB_URI) {
+      console.error('❌ MONGODB_URI environment variable is not set!')
+      console.log('Please configure your .env file with your MongoDB Atlas connection string.')
+      process.exit(1)
+    }
+
+    if (process.env.MONGODB_URI.includes('localhost') || process.env.MONGODB_URI.includes('127.0.0.1')) {
+      console.error('❌ Local MongoDB connection detected!')
+      console.log('This server is configured to only use cloud database.')
+      console.log('Please update your .env file with a MongoDB Atlas connection string.')
+      process.exit(1)
+    }
+    
+    await mongoose.connect(process.env.MONGODB_URI)
+    
+    console.log('✅ MongoDB connected successfully')
+    console.log(`📊 Connected to: ${mongoose.connection.db.databaseName}`)
+    console.log('🌐 Using MongoDB Atlas (Cloud Database)')
+    
+  } catch (error) {
+    console.error('❌ MongoDB connection error:', error.message)
+    
+    if (error.message.includes('authentication failed')) {
+      console.log('🔑 Please check your MongoDB Atlas username and password')
+    } else if (error.message.includes('network')) {
+      console.log('🌐 Please check your internet connection and MongoDB Atlas settings')
+    }
+    
+    process.exit(1)
+  }
+}
+
+// Initialize database connection
+connectToDatabase()
 
 // Import routes
 const appointmentRoutes = require('./routes/appointments')

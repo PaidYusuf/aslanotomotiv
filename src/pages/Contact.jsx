@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import { format, parse } from 'date-fns'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +13,11 @@ const Contact = () => {
     service: '',
     vehicleInfo: '',
     message: '',
-    appointmentDate: '',
+    appointmentDate: '', // Will store DD/MM/YYYY format
     appointmentTime: ''
   })
+  
+  const [calendarDate, setCalendarDate] = useState(null) // Date object for picker
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
@@ -42,6 +47,22 @@ const Contact = () => {
     }))
   }
 
+  // Handle date selection from calendar
+  const handleDateChange = (date) => {
+    setCalendarDate(date)
+    if (date) {
+      setFormData(prev => ({
+        ...prev,
+        appointmentDate: format(date, 'dd/MM/yyyy')
+      }))
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        appointmentDate: ''
+      }))
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -56,8 +77,22 @@ const Contact = () => {
         return
       }
 
+      // Convert DD/MM/YYYY to ISO format for backend
+      let isoDate = formData.appointmentDate
+      if (formData.appointmentDate && formData.appointmentDate.includes('/')) {
+        // Parse DD/MM/YYYY and convert to YYYY-MM-DD
+        const parsedDate = parse(formData.appointmentDate, 'dd/MM/yyyy', new Date())
+        isoDate = format(parsedDate, 'yyyy-MM-dd')
+      }
+
+      // Prepare data for backend
+      const submitData = {
+        ...formData,
+        appointmentDate: isoDate
+      }
+
       // Send data to backend
-      const response = await axios.post('http://localhost:5000/api/appointments', formData)
+      const response = await axios.post('http://localhost:5000/api/appointments', submitData)
       
       if (response.status === 201) {
         setSubmitStatus('success')
@@ -71,6 +106,7 @@ const Contact = () => {
           appointmentDate: '',
           appointmentTime: ''
         })
+        setCalendarDate(null) // Reset calendar date
       }
     } catch (error) {
       console.error('Error submitting appointment:', error)
@@ -324,13 +360,16 @@ const Contact = () => {
                       <i className="fas fa-calendar"></i>
                       Randevu Tarihi
                     </label>
-                    <input
-                      type="date"
+                    <DatePicker
                       id="appointmentDate"
-                      name="appointmentDate"
-                      value={formData.appointmentDate}
-                      onChange={handleInputChange}
-                      min={new Date().toISOString().split('T')[0]}
+                      selected={calendarDate}
+                      onChange={handleDateChange}
+                      dateFormat="dd/MM/yyyy"
+                      minDate={new Date()}
+                      placeholderText="GG/AA/YYYY"
+                      className="form-control"
+                      autoComplete="off"
+                      showPopperArrow={false}
                     />
                   </div>
 
@@ -614,6 +653,32 @@ const Contact = () => {
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
+          color: var(--text-muted);
+        }
+
+        /* DatePicker Styling */
+        .form-group .react-datepicker-wrapper {
+          width: 100%;
+        }
+
+        .form-group .react-datepicker__input-container input {
+          background: var(--accent-gray);
+          border: 1px solid var(--border-color);
+          color: var(--text-light);
+          padding: 0.8rem;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          border-radius: 0;
+          width: 100%;
+        }
+
+        .form-group .react-datepicker__input-container input:focus {
+          outline: none;
+          border-color: var(--primary-gold);
+          box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group .react-datepicker__input-container input::placeholder {
           color: var(--text-muted);
         }
 
